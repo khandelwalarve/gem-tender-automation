@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Config with secrets
+config/settings.yaml
+
+# Data / downloads
+data/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Node (dashboard)
+src/dashboard/node_modules/
+src/dashboard/.next/
+src/dashboard/dist/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,51 @@
+# config/settings.example.yaml
+# Copy to settings.yaml and fill in real values. Never commit settings.yaml.
+
+database:
+  url: "postgresql://user:password@localhost:5432/gem_tender"
+
+storage:
+  backend: "local"          # "local" or "minio"
+  local_path: "./data/files"
+  minio:
+    endpoint: "localhost:9000"
+    access_key: ""
+    secret_key: ""
+    bucket: "tender-docs"
+
+llm:
+  endpoint: "http://localhost:11434/api"   # Ollama or remote
+  model: "llama3.1"
+  timeout_seconds: 120
+
+playwright:
+  headless: true
+  slow_mo_ms: 0
+
+alerts:
+  email:
+    smtp_host: "smtp.example.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    from_addr: "bot@example.com"
+    operator_addr: "operator@example.com"
+  sms:
+    provider: ""            # e.g. "twilio"
+    account_sid: ""
+    auth_token: ""
+    from_number: ""
+    operator_number: ""
+
+decision_engine:
+  auto_submit_min_score: 0.85
+  review_min_score: 0.60
+  max_auto_submit_value_inr: 5000000
+  max_risk_flags: 0
+
+human_approval:
+  reminder_hours_before_deadline: 24
+  auto_reject_hours_before_deadline: 2
+
+profile:
+  staleness_warning_days: 30
