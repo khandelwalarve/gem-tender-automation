@@ -61,11 +61,30 @@ cp config/settings.example.yaml config/settings.yaml
 # Run DB migrations
 python scripts/migrate.py
 
+# Seed the initial company profile (edit scripts/seed_profile.py first)
+python scripts/seed_profile.py
+
+# One-time human login to GeM (saves session cookies for automation)
+python -c "from src.tender_acquisition import save_session_interactive; save_session_interactive()"
+
 # Start the backend
 uvicorn src.main:app --reload
 
 # Start the dashboard
 cd src/dashboard && npm install && npm run dev
+```
+
+## Running the Pipeline
+
+```bash
+# Process a single Bid ID end-to-end
+python scripts/run_pipeline.py BID-2024-001 \
+  --feasibility-pdf docs/feasibility_thresholds.pdf \
+  --reviewer-email ops@psitcons.example \
+  --price 1234567
+
+# Long-running background jobs (corrigendum checks, deadline reminders)
+python scripts/scheduler.py
 ```
 
 ## Configuration

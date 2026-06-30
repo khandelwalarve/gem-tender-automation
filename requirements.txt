@@ -21,6 +21,7 @@ sqlalchemy==2.0.30
 # Validation
 pydantic==2.7.3
 jsonschema==4.22.0
+pyyaml==6.0.1
 
 # API
 fastapi==0.111.0
