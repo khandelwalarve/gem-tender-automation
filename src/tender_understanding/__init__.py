@@ -1,4 +1,4 @@
-"""Tender Understanding: Llama 3.1 extraction + Pydantic validation. Entry: understand_tender(chunks)."""
+"""Tender Understanding: Qwen extraction + Pydantic validation. Entry: understand_tender(chunks)."""
 from .extractor import understand_tender, extract_from_chunk, merge_partial_extractions, ExtractionValidationError
 from .storage import save_tender_data, load_tender_data
 from .llm_client import call_llm, call_llm_json, LLMError

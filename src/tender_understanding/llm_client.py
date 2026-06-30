@@ -1,5 +1,5 @@
 """
-llm_client.py — Thin wrapper around the configured LLM endpoint (Llama 3.1,
+llm_client.py — Thin wrapper around the configured LLM endpoint (Qwen,
 via Ollama-style API by default). Keeping this separate makes it easy to
 swap providers later without touching extraction logic.
 """
@@ -24,7 +24,7 @@ def call_llm(prompt: str, system: str | None = None, json_mode: bool = False) ->
     settings = get_settings()
     llm_cfg = settings.get("llm", {})
     endpoint = llm_cfg.get("endpoint", "http://localhost:11434/api")
-    model = llm_cfg.get("model", "llama3.1")
+    model = llm_cfg.get("model", "qwen2.5")
     timeout = llm_cfg.get("timeout_seconds", 120)
 
     payload = {

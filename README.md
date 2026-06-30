@@ -10,10 +10,10 @@ The pipeline runs through 11 sequential phases:
 |---|-------|-------|-----------|
 | 1 | Tender Acquisition | Automation | Playwright, PostgreSQL, Pandas |
 | 2 | Document Processing | AI Engine | PyMuPDF, OCRmyPDF, Camelot, Tabula |
-| 3 | Tender Understanding | AI Engine | Llama 3.1, Pydantic |
+| 3 | Tender Understanding | AI Engine | Qwen, Pydantic |
 | 4 | Eligibility Engine | Rules Engine | Python, PostgreSQL |
-| 5 | Feasibility Analysis | Rules Engine | Python, Llama 3.1 |
-| 6 | Risk Detection | AI + Rules | Llama 3.1, PostgreSQL |
+| 5 | Feasibility Analysis | Rules Engine | Python, Qwen |
+| 6 | Risk Detection | AI + Rules | Qwen, PostgreSQL |
 | 7 | Decision Engine | Rules Engine | Python |
 | 8 | Human Approval | Human + Dashboard | React, FastAPI |
 | 9 | Bid Participation | Automation | Playwright, Python |
@@ -93,7 +93,7 @@ All runtime config lives in `config/settings.yaml` (never committed). See `confi
 
 - PostgreSQL connection string
 - MinIO / local storage path
-- Llama 3.1 endpoint / API key
+- Qwen endpoint / API key
 - Alert email / SMS credentials
 - Approval rule thresholds (score cutoffs, value limits, risk caps)
 

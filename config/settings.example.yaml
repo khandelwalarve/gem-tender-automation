@@ -15,7 +15,7 @@ storage:
 
 llm:
   endpoint: "http://localhost:11434/api"   # Ollama or remote
-  model: "llama3.1"
+  model: "qwen2.5"
   timeout_seconds: 120
 
 playwright:
